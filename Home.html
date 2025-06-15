@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>KaDelivery – Gone But Delicious</title>
+  <title>KaDelivery RIP</title>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
@@ -97,6 +97,14 @@
       padding: 20px;
     }
 
+    .gif {
+      display: block;
+      margin: 20px auto 40px;
+      max-width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
     @media (max-width: 600px) {
       .header h1 {
         font-size: 2.2em;
@@ -112,6 +120,7 @@
   <div class="header">
     <h1>🕊️ KaDelivery is Dead</h1>
     <p>But the hunger still lives on in Kazbegi.</p>
+    <img class="gif" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHAxMXhieDcyYmp3eXVzZ2V0ZDFsb2F0cDE3Mm8xcW4xOXRkbmd5MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6qFFgNgextP9u/giphy.gif" alt="Sad Crying GIF" />
   </div>
 
   <div class="container">
@@ -128,19 +137,18 @@
       <div class="item">🔥 <strong>Cook it yourself.</strong> Build a fire. Grill. Survive.</div>
       <div class="item">🍃 <strong>Forage some berries.</strong> High-risk, high-snack reward.</div>
       <div class="item">🧘 <strong>Fast for the spirit.</strong> Maybe food was the distraction all along.</div>
-      <div class="item">🐐 <strong>Make friends with a goat.</strong> You never know what they’ll share.</div>
       <div class="item">📦 <strong>Check under your bed</strong> Sometimes forgotten snacks become treasures.</div>
       <div class="item">🌙 <strong>Dream of Khinkali</strong> Because hunger is the best ingredient for imagination.</div>
     </div>
 
     <div class="telegram">
-      <h3>Unemployed & Hungry? Let's Chat.</h3>
+      <h3>Staring Into the Void? Me Too.</h3>
       <a href="https://t.me/aida697" target="_blank">Message @aida697 on Telegram</a>
     </div>
 
     <div class="section">
       <h2>Farewell, but Never Forgotten</h2>
-      <p>To those who scanned the QR code on that cardboard delivery box: you’re part of our story now.</p>
+      <p>To those who scanned the QR code: you’re part of our story now.</p>
       <p style="color: #777; font-style: italic;">KaDelivery (2022–2024) – built in Kazbegi, buried in Kazbegi.</p>
     </div>
 
@@ -150,10 +158,19 @@
     Made with love, not venture capital.
   </div>
 
-  <audio autoplay loop>
-    <source src="1.mp3" type="audio/mpeg" />
-    Your browser does not support the audio element.
-  </audio>
 
+  <audio id="bg-music" src="1.mp3" loop></audio>
+
+  <script>
+    const audio = document.getElementById('bg-music');
+    let started = false;
+
+    window.addEventListener('scroll', () => {
+      if (!started) {
+        audio.play().catch(e => console.log('Audio play prevented:', e));
+        started = true;
+      }
+    });
+  </script>
 </body>
 </html>
